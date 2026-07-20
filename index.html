@@ -3,960 +3,1292 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Office Notarial TOURÉ & N'DIAYE - Bamako</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
+    <title>Office Notarial TOURÉ &amp; N'DIAYE — Notaires à Bamako, Mali</title>
+    <meta name="description" content="Office Notarial TOURÉ & N'DIAYE à Bamako — droit immobilier, droit des affaires, patrimoine et famille. Plus de 35 ans d'expertise notariale au Mali.">
+    <link rel="icon" type="image/png" href="Gemini_Generated_Image_w13mxcw13mxcw13m.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
         :root {
-            --primary: #008080;
-            --primary-dark: #006666;
-            --primary-light: #33cccc;
-            --dark: #004d4d;
-            --gold: #d4af37;
-            --gold-light: #f4e4b5;
-            --light: #fdfdfd;
-            --light-gray: #f8f9fa;
-            --text: #2c3e50;
-            --text-light: #6c757d;
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
-            --border-radius-lg: 25px;
+            --teal-950: #032726;
+            --teal-900: #05403d;
+            --teal-800: #075e59;
+            --teal-600: #0d8a82;
+            --teal-500: #14a89e;
+            --teal-100: #d9f1ef;
+            --teal-50: #f0faf9;
+            --gold: #c9a24b;
+            --gold-light: #e3c98a;
+            --ink: #1c2b2a;
+            --muted: #5c6f6d;
+            --paper: #fbfcfc;
+            --line: #e3ecea;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Inter', 'Segoe UI', sans-serif;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --shadow-sm: 0 2px 12px rgba(3, 39, 38, 0.06);
+            --shadow-md: 0 12px 40px rgba(3, 39, 38, 0.10);
+            --shadow-lg: 0 24px 70px rgba(3, 39, 38, 0.16);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 100px;
+            scroll-padding-top: 96px;
         }
-        
-        body { 
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text);
-            background-color: var(--light);
+
+        body {
+            font-family: var(--sans);
+            color: var(--ink);
+            background: var(--paper);
+            line-height: 1.7;
+            font-size: 16px;
             overflow-x: hidden;
-            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            line-height: 1.2;
+        h1, h2, h3 {
+            font-family: var(--serif);
+            font-weight: 600;
+            line-height: 1.15;
+            color: var(--teal-950);
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; }
+        ul { list-style: none; }
+
+        ::selection { background: var(--teal-600); color: #fff; }
 
         .container {
-            width: 100%;
-            max-width: 1400px;
+            width: min(1200px, 92%);
             margin: 0 auto;
-            padding: 0 5%;
         }
 
-        .section-padding {
-            padding: 100px 0;
+        /* ---------- Utility : reveal on scroll ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal.d1 { transition-delay: 0.1s; }
+        .reveal.d2 { transition-delay: 0.2s; }
+        .reveal.d3 { transition-delay: 0.3s; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal { opacity: 1; transform: none; transition: none; }
+            * { animation: none !important; }
         }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-            position: relative;
-            display: inline-block;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--gold), var(--primary));
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 60px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 16px 40px;
-            border-radius: 50px;
+        /* ---------- Eyebrow / titles ---------- */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.78rem;
             font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        .eyebrow::before {
+            content: '';
+            width: 42px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .section-head { margin-bottom: 64px; max-width: 720px; }
+        .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+        .section-head.center .eyebrow::after {
+            content: '';
+            width: 42px;
+            height: 1px;
+            background: var(--gold);
+        }
+        .section-head h2 {
+            font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+            margin: 18px 0 16px;
+        }
+        .section-head p { color: var(--muted); font-size: 1.05rem; font-weight: 300; }
+
+        .section { padding: 110px 0; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 17px 36px;
+            font-family: var(--sans);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            outline: none;
+            border: 1px solid transparent;
+            transition: all 0.45s var(--ease);
             position: relative;
-            overflow: hidden;
+        }
+        .btn i { transition: transform 0.45s var(--ease); font-size: 0.75rem; }
+        .btn:hover i { transform: translateX(5px); }
+
+        .btn-gold {
+            background: linear-gradient(120deg, var(--gold), #b8903a);
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(201, 162, 75, 0.35);
+        }
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(201, 162, 75, 0.45);
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            box-shadow: var(--shadow);
+        .btn-ghost {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #fff;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(4px);
         }
-
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 128, 128, 0.3);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
+        .btn-ghost:hover {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.12);
             transform: translateY(-3px);
         }
 
-        .text-center {
-            text-align: center;
+        .btn-teal {
+            background: var(--teal-800);
+            color: #fff;
+        }
+        .btn-teal:hover {
+            background: var(--teal-900);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
         }
 
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+        /* ---------- Top bar ---------- */
+        .topbar {
+            background: var(--teal-950);
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.8rem;
+            padding: 9px 0;
+            position: relative;
+            z-index: 1001;
+        }
+        .topbar .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(15px);
+            gap: 20px;
+        }
+        .topbar-group { display: flex; gap: 28px; flex-wrap: wrap; }
+        .topbar span { display: inline-flex; align-items: center; gap: 8px; }
+        .topbar i { color: var(--gold); font-size: 0.75rem; }
+        .topbar a:hover { color: #fff; }
+
+        /* ---------- Navigation ---------- */
+        header.site-header {
+            position: sticky;
+            top: 0;
             z-index: 1000;
-            transition: var(--transition);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            background: rgba(251, 252, 252, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid transparent;
+            transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
+        }
+        header.site-header.scrolled {
+            border-bottom-color: var(--line);
+            box-shadow: 0 8px 30px rgba(3, 39, 38, 0.07);
         }
 
-        nav.scrolled {
-            padding: 12px 5%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo-container {
+        .nav {
             display: flex;
             align-items: center;
-            gap: 15px;
+            justify-content: space-between;
+            padding: 14px 0;
+            transition: padding 0.4s var(--ease);
         }
+        header.scrolled .nav { padding: 8px 0; }
 
-        .logo-img {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-            transition: var(--transition);
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
-
-        nav.scrolled .logo-img {
-            height: 55px;
+        .brand-logo {
+            height: 62px;
+            width: 62px;
+            object-fit: cover;
+            border-radius: 50%;
+            box-shadow: 0 4px 14px rgba(3, 39, 38, 0.18);
+            transition: height 0.4s var(--ease), width 0.4s var(--ease);
         }
-
-        .logo-text {
-            font-size: 1.1rem;
+        header.scrolled .brand-logo { height: 50px; width: 50px; }
+        .brand-name {
+            font-family: var(--serif);
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-            line-height: 1.2;
+            letter-spacing: 0.06em;
+            color: var(--teal-900);
+            line-height: 1.15;
         }
-
-        .logo-text span {
+        .brand-name small {
             display: block;
-            font-size: 0.85rem;
-            color: var(--dark);
+            font-family: var(--sans);
+            font-size: 0.62rem;
             font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 3px;
         }
 
         .nav-links {
             display: flex;
-            list-style: none;
-            gap: 40px;
+            align-items: center;
+            gap: 38px;
         }
-
-        .nav-links li {
-            position: relative;
-        }
-
         .nav-links a {
+            font-size: 0.8rem;
             font-weight: 600;
-            font-size: 0.9rem;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--ink);
+            padding: 6px 0;
             position: relative;
-            padding: 5px 0;
+            transition: color 0.3s;
         }
-
         .nav-links a::after {
             content: '';
             position: absolute;
-            width: 0;
-            height: 2px;
+            left: 0;
             bottom: 0;
-            left: 0;
-            background: var(--primary);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
             width: 100%;
+            height: 1.5px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.45s var(--ease);
         }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
+        .nav-links a:hover, .nav-links a.active { color: var(--teal-600); }
+        .nav-links a:hover::after, .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
+        .nav-cta { margin-left: 10px; }
+        .nav-cta .btn { padding: 12px 26px; }
 
-        .mobile-menu-btn {
+        .burger {
             display: none;
-            font-size: 1.5rem;
-            color: var(--dark);
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
             cursor: pointer;
-            transition: var(--transition);
+            padding: 8px;
+            z-index: 1102;
         }
-
-        .mobile-menu-btn:hover {
-            color: var(--primary);
+        .burger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: var(--teal-900);
+            transition: all 0.4s var(--ease);
         }
+        .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger.open span:nth-child(2) { opacity: 0; }
+        .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="white" opacity="0.05"/></svg>');
-            background-size: cover;
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin-left: 5%;
-        }
-
-        .hero-logo {
-            width: 180px;
-            margin-bottom: 30px;
-            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            color: var(--dark);
-            margin-bottom: 25px;
-            line-height: 1.1;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--text-light);
-            margin-bottom: 45px;
-            font-weight: 300;
-            max-width: 700px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-            40% { transform: translateY(-10px) translateX(-50%); }
-            60% { transform: translateY(-5px) translateX(-50%); }
-        }
-
-        .scroll-indicator a {
+        /* ---------- Mobile drawer ---------- */
+        .drawer {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(160deg, var(--teal-950), var(--teal-900));
+            z-index: 1100;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--text-light);
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
+            justify-content: center;
+            gap: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s var(--ease), visibility 0.5s;
         }
-
-        .scroll-indicator i {
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-            color: var(--primary);
+        .drawer.open { opacity: 1; visibility: visible; }
+        .drawer a {
+            font-family: var(--serif);
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 12px 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s var(--ease);
         }
+        .drawer.open a { opacity: 1; transform: translateY(0); }
+        .drawer.open a:nth-child(1) { transition-delay: 0.1s; }
+        .drawer.open a:nth-child(2) { transition-delay: 0.17s; }
+        .drawer.open a:nth-child(3) { transition-delay: 0.24s; }
+        .drawer.open a:nth-child(4) { transition-delay: 0.31s; }
+        .drawer.open a:nth-child(5) { transition-delay: 0.38s; }
+        .drawer a:hover { color: var(--gold-light); }
+        .drawer .drawer-close {
+            position: absolute;
+            top: 26px;
+            right: 26px;
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.7);
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.4s var(--ease), color 0.3s;
+        }
+        .drawer .drawer-close:hover { color: #fff; transform: rotate(90deg); }
 
-        /* --- EXPERTISE SECTION --- */
-        .expertise {
-            background-color: var(--light-gray);
+        /* ---------- Hero ---------- */
+        .hero {
             position: relative;
+            min-height: calc(100vh - 100px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background:
+                radial-gradient(ellipse 80% 60% at 75% 20%, rgba(20, 168, 158, 0.22), transparent 60%),
+                radial-gradient(ellipse 60% 50% at 15% 90%, rgba(201, 162, 75, 0.10), transparent 55%),
+                linear-gradient(160deg, var(--teal-950) 0%, var(--teal-900) 55%, #063d3a 100%);
+            color: #fff;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
+            background-size: 56px 56px;
+            mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 75%);
+            -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 30%, transparent 75%);
+        }
+        .hero-watermark {
+            position: absolute;
+            right: -6%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: min(560px, 48vw);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0.16;
+            filter: saturate(0.7);
+            box-shadow: 0 0 120px rgba(20, 168, 158, 0.35);
+            animation: heroFloat 9s ease-in-out infinite;
+            pointer-events: none;
+        }
+        .hero-watermark img { width: 100%; height: 100%; object-fit: cover; }
+        @keyframes heroFloat {
+            0%, 100% { transform: translateY(-50%); }
+            50% { transform: translateY(calc(-50% - 18px)); }
         }
 
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            padding: 90px 0 60px;
+        }
+        .hero .eyebrow { color: var(--gold-light); }
+        .hero h1 {
+            font-size: clamp(2.6rem, 5.6vw, 4.4rem);
+            color: #fff;
+            font-weight: 600;
+            margin: 26px 0 8px;
+            max-width: 800px;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+        .hero-sub {
+            font-size: 1.12rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.72);
+            max-width: 620px;
+            margin: 18px 0 44px;
+        }
+        .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; }
+
+        .hero-stats {
+            position: relative;
+            z-index: 2;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin-top: 80px;
+        }
+        .hero-stats .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding-top: 36px;
+            padding-bottom: 44px;
+        }
+        .stat .stat-num {
+            font-family: var(--serif);
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1;
+        }
+        .stat .stat-num sup { color: var(--gold-light); font-size: 1.4rem; }
+        .stat .stat-label {
+            font-size: 0.78rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+            margin-top: 10px;
+        }
+
+        /* ---------- Expertise ---------- */
+        .expertise { background: var(--paper); }
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
         }
-
-        .expertise-card {
-            background: white;
-            padding: 50px 35px;
-            border-radius: var(--border-radius-lg);
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
+        .exp-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 46px 38px;
             position: relative;
             overflow: hidden;
+            transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease), border-color 0.5s;
         }
-
-        .expertise-card::before {
+        .exp-card::after {
             content: '';
             position: absolute;
-            top: 0;
             left: 0;
+            bottom: 0;
             width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--gold), var(--primary));
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold), var(--teal-500));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.6s var(--ease);
         }
-
-        .expertise-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .expertise-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--gold-light), var(--primary-light));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
-            color: var(--dark);
-            font-size: 1.8rem;
-        }
-
-        .expertise-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .expertise-card p {
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        /* --- NOTAIRES SECTION --- */
-        .notaires-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .notaire-card {
-            background: white;
-            padding: 50px;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-left: 5px solid var(--primary);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .notaire-card:hover {
+        .exp-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
+            border-color: transparent;
         }
-
-        .notaire-tag {
-            background: linear-gradient(to right, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .notaire-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-
-        .notaire-card p {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        /* --- CONTACT SECTION --- */
-        .contact {
-            background-color: var(--light-gray);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: center;
-            margin-top: 60px;
-        }
-
-        .contact-info {
-            background: white;
-            padding: 60px;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow);
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 40px;
-            color: var(--dark);
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 30px;
-            gap: 20px;
-        }
-
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--gold-light), var(--primary-light));
+        .exp-card:hover::after { transform: scaleX(1); }
+        .exp-icon {
+            width: 62px;
+            height: 62px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .contact-details h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--dark);
-        }
-
-        .contact-details p {
-            color: var(--text-light);
-            font-size: 1rem;
-        }
-
-        .hours {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #eee;
-        }
-
-        .hours p:first-child {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .contact-map {
-            height: 100%;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-map iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 500px;
-            border: none;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 0 40px;
-        }
-
-        .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 60px;
-            margin-bottom: 60px;
+            place-items: center;
+            background: var(--teal-50);
+            color: var(--teal-800);
+            font-size: 1.35rem;
+            margin-bottom: 28px;
+            transition: all 0.5s var(--ease);
         }
-
-        .footer-logo {
-            height: 60px;
-            margin-bottom: 20px;
-            opacity: 0.9;
+        .exp-card:hover .exp-icon {
+            background: var(--teal-800);
+            color: var(--gold-light);
+            transform: scale(1.06) rotate(-4deg);
         }
-
-        .footer-about p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .footer-links h4, .footer-contact h4 {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            color: white;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-links h4::after, .footer-contact h4::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background: var(--gold);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--gold);
-            padding-left: 5px;
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+        .exp-card h3 { font-size: 1.55rem; margin-bottom: 14px; }
+        .exp-card p { color: var(--muted); font-size: 0.95rem; font-weight: 300; }
+        .exp-card ul { margin-top: 18px; }
+        .exp-card ul li {
+            font-size: 0.88rem;
+            color: var(--ink);
+            padding: 7px 0;
+            border-top: 1px dashed var(--line);
             display: flex;
             align-items: center;
             gap: 10px;
         }
-
-        .footer-contact i {
+        .exp-card ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.6rem;
             color: var(--gold);
-            width: 20px;
         }
+
+        /* ---------- Étude (about) ---------- */
+        .etude {
+            background: linear-gradient(180deg, var(--teal-50) 0%, var(--paper) 100%);
+        }
+        .etude-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .etude-visual { position: relative; }
+        .etude-visual .frame {
+            position: relative;
+            border-radius: 50% 50% 4px 4px / 42% 42% 4px 4px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .etude-visual .frame img {
+            width: 100%;
+            display: block;
+            aspect-ratio: 0.92;
+            object-fit: cover;
+        }
+        .etude-visual::before {
+            content: '';
+            position: absolute;
+            inset: -26px auto auto -26px;
+            width: 130px;
+            height: 130px;
+            border-top: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
+        }
+        .etude-visual::after {
+            content: '';
+            position: absolute;
+            inset: auto -26px -26px auto;
+            width: 130px;
+            height: 130px;
+            border-bottom: 2px solid var(--teal-600);
+            border-right: 2px solid var(--teal-600);
+        }
+        .etude-badge {
+            position: absolute;
+            bottom: 34px;
+            left: -38px;
+            background: var(--teal-950);
+            color: #fff;
+            padding: 22px 30px;
+            box-shadow: var(--shadow-md);
+            z-index: 3;
+        }
+        .etude-badge .num {
+            font-family: var(--serif);
+            font-size: 2.1rem;
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1;
+        }
+        .etude-badge .lbl {
+            font-size: 0.68rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.65);
+            margin-top: 6px;
+        }
+
+        .etude-text h2 {
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin: 18px 0 22px;
+        }
+        .etude-text > p { color: var(--muted); font-weight: 300; margin-bottom: 18px; }
+        .etude-values { margin-top: 34px; display: grid; gap: 20px; }
+        .value-item { display: flex; gap: 20px; align-items: flex-start; }
+        .value-item i {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #fff;
+            border: 1px solid var(--line);
+            color: var(--gold);
+            font-size: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .value-item h3 { font-size: 1.2rem; font-family: var(--sans); font-weight: 600; color: var(--teal-900); margin-bottom: 3px; }
+        .value-item p { font-size: 0.92rem; color: var(--muted); font-weight: 300; }
+
+        /* ---------- Notaires ---------- */
+        .notaires { background: var(--paper); }
+        .notaires-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+        .notaire-card {
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 52px 46px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+        }
+        .notaire-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, var(--gold), var(--teal-600));
+        }
+        .notaire-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .notaire-card .monogram {
+            font-family: var(--serif);
+            position: absolute;
+            top: -30px;
+            right: -6px;
+            font-size: 11rem;
+            font-weight: 700;
+            color: var(--teal-50);
+            line-height: 1;
+            user-select: none;
+            pointer-events: none;
+            transition: color 0.5s;
+        }
+        .notaire-card:hover .monogram { color: var(--teal-100); }
+        .notaire-tag {
+            position: relative;
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid var(--gold-light);
+            padding: 7px 16px;
+            margin-bottom: 24px;
+            background: #fff;
+        }
+        .notaire-card h3 { position: relative; font-size: 1.9rem; margin-bottom: 6px; }
+        .notaire-card .role {
+            position: relative;
+            font-size: 0.85rem;
+            color: var(--teal-600);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .notaire-card p.bio {
+            position: relative;
+            color: var(--muted);
+            font-size: 0.97rem;
+            font-weight: 300;
+        }
+
+        /* ---------- Process ---------- */
+        .process {
+            background:
+                radial-gradient(ellipse 70% 60% at 85% 10%, rgba(20, 168, 158, 0.15), transparent 60%),
+                linear-gradient(160deg, var(--teal-950), var(--teal-900));
+            color: #fff;
+        }
+        .process .section-head h2 { color: #fff; }
+        .process .section-head p { color: rgba(255,255,255,0.6); }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            counter-reset: step;
+        }
+        .step {
+            position: relative;
+            padding: 38px 28px 34px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(6px);
+            transition: background 0.5s, transform 0.5s var(--ease), border-color 0.5s;
+        }
+        .step:hover {
+            background: rgba(255, 255, 255, 0.09);
+            border-color: rgba(201, 162, 75, 0.5);
+            transform: translateY(-8px);
+        }
+        .step::before {
+            counter-increment: step;
+            content: '0' counter(step);
+            font-family: var(--serif);
+            font-size: 3rem;
+            font-weight: 700;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--gold-light);
+            display: block;
+            line-height: 1;
+            margin-bottom: 22px;
+            opacity: 0.9;
+        }
+        .step h3 { color: #fff; font-family: var(--sans); font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; }
+        .step p { font-size: 0.88rem; color: rgba(255, 255, 255, 0.62); font-weight: 300; }
+
+        /* ---------- CTA band ---------- */
+        .cta-band {
+            background: var(--paper);
+            padding: 0;
+        }
+        .cta-band .inner {
+            position: relative;
+            margin-top: -1px;
+            background: linear-gradient(120deg, var(--gold) 0%, #b8903a 100%);
+            padding: 64px 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-80px);
+            margin-bottom: -80px;
+        }
+        .cta-band .inner::before {
+            content: '§';
+            position: absolute;
+            font-family: var(--serif);
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 14rem;
+            color: rgba(255, 255, 255, 0.12);
+            line-height: 1;
+            pointer-events: none;
+        }
+        .cta-band h2 { color: #fff; font-size: clamp(1.7rem, 3vw, 2.4rem); max-width: 560px; }
+        .cta-band p { color: rgba(255, 255, 255, 0.85); margin-top: 8px; font-weight: 300; }
+        .cta-band .btn {
+            background: var(--teal-950);
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .cta-band .btn:hover { background: var(--teal-900); transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+        /* ---------- Contact ---------- */
+        .contact { background: linear-gradient(180deg, var(--paper), var(--teal-50)); }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 34px;
+            align-items: stretch;
+        }
+        .contact-panel {
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 54px 48px;
+            box-shadow: var(--shadow-sm);
+        }
+        .contact-panel h3 { font-size: 1.8rem; margin-bottom: 34px; }
+        .c-item {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            padding: 18px 0;
+            border-bottom: 1px dashed var(--line);
+        }
+        .c-item:last-of-type { border-bottom: none; }
+        .c-item i {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--teal-50);
+            color: var(--teal-800);
+            font-size: 1.05rem;
+            transition: all 0.4s var(--ease);
+        }
+        .c-item:hover i { background: var(--teal-800); color: var(--gold-light); }
+        .c-item h4 {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .c-item p, .c-item a { color: var(--ink); font-size: 1rem; }
+        .c-item a:hover { color: var(--teal-600); }
+
+        .hours-box {
+            margin-top: 30px;
+            background: var(--teal-950);
+            color: #fff;
+            padding: 26px 30px;
+        }
+        .hours-box h4 {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            margin-bottom: 14px;
+        }
+        .hours-box .row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.92rem;
+            padding: 6px 0;
+            color: rgba(255,255,255,0.85);
+            border-bottom: 1px dashed rgba(255,255,255,0.15);
+        }
+        .hours-box .row:last-child { border-bottom: none; }
+        .hours-box .row span:last-child { color: #fff; font-weight: 500; }
+
+        .contact-map {
+            overflow: hidden;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-md);
+            min-height: 480px;
+            position: relative;
+        }
+        .contact-map iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            filter: saturate(0.85);
+        }
+
+        /* ---------- Footer ---------- */
+        footer {
+            background: var(--teal-950);
+            color: rgba(255, 255, 255, 0.68);
+        }
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.2fr;
+            gap: 60px;
+            padding: 80px 0 60px;
+        }
+        .footer-brand { display: flex; flex-direction: column; gap: 20px; }
+        .footer-brand .brand-row { display: flex; align-items: center; gap: 16px; }
+        .footer-brand img {
+            height: 64px;
+            width: 64px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
+        }
+        .footer-brand .brand-name { color: #fff; }
+        .footer-brand p { font-size: 0.92rem; font-weight: 300; max-width: 380px; }
+
+        footer h4 {
+            font-family: var(--sans);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        footer h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 34px;
+            height: 2px;
+            background: var(--gold);
+        }
+        .footer-nav li { margin-bottom: 12px; }
+        .footer-nav a {
+            font-size: 0.92rem;
+            transition: color 0.3s, padding-left 0.3s;
+        }
+        .footer-nav a:hover { color: var(--gold-light); padding-left: 6px; }
+        .footer-contact p {
+            display: flex;
+            gap: 12px;
+            align-items: baseline;
+            font-size: 0.92rem;
+            margin-bottom: 14px;
+        }
+        .footer-contact i { color: var(--gold); width: 18px; }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+            padding: 26px 0;
+            display: flex;
+            justify-content: space-between;
+            gap: 14px;
+            flex-wrap: wrap;
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.4);
         }
 
-        /* --- MOBILE RESPONSIVE --- */
-        @media (max-width: 1100px) {
-            .hero h1 {
-                font-size: 3.2rem;
-            }
-            
-            .notaires-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .contact-map iframe {
-                min-height: 400px;
-            }
+        /* ---------- Back to top ---------- */
+        .to-top {
+            position: fixed;
+            right: 26px;
+            bottom: 26px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: var(--teal-800);
+            color: #fff;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(14px);
+            transition: all 0.45s var(--ease);
+            z-index: 900;
+        }
+        .to-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
+        .to-top:hover { background: var(--gold); transform: translateY(-4px); }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1080px) {
+            .expertise-grid { grid-template-columns: 1fr 1fr; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .etude-grid { gap: 60px; }
+            .footer-main { grid-template-columns: 1fr 1fr; }
         }
 
-        @media (max-width: 900px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .mobile-menu {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
-                z-index: 999;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition);
-            }
-            
-            .mobile-menu.active {
-                opacity: 1;
-                visibility: visible;
-            }
-            
-            .mobile-menu ul {
-                list-style: none;
-                text-align: center;
-            }
-            
-            .mobile-menu li {
-                margin-bottom: 30px;
-            }
-            
-            .mobile-menu a {
-                font-size: 1.5rem;
-                font-weight: 600;
-                color: var(--dark);
-                text-transform: uppercase;
-                letter-spacing: 2px;
-            }
-            
-            .mobile-menu a:hover,
-            .mobile-menu a.active {
-                color: var(--primary);
-            }
-            
-            .close-menu {
-                position: absolute;
-                top: 30px;
-                right: 30px;
-                font-size: 2rem;
-                color: var(--dark);
-                cursor: pointer;
-                transition: var(--transition);
-            }
-            
-            .close-menu:hover {
-                color: var(--primary);
-                transform: rotate(90deg);
-            }
-            
-            .hero-content {
-                margin-left: 0;
-                padding: 0 5%;
-                text-align: center;
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .hero-btns {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-            
-            .section-title {
-                font-size: 2.4rem;
-            }
-            
-            .expertise-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .notaire-card {
-                padding: 40px 30px;
-            }
-            
-            .contact-info {
-                padding: 40px 30px;
-            }
+        @media (max-width: 920px) {
+            .nav-links { display: none; }
+            .burger { display: flex; }
+            .topbar-group.hours-hide { display: none; }
+            .etude-grid { grid-template-columns: 1fr; gap: 70px; }
+            .etude-visual { max-width: 480px; margin: 0 auto; }
+            .etude-badge { left: -12px; }
+            .notaires-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-map { min-height: 380px; }
+            .hero-watermark { opacity: 0.09; right: -30%; }
+            .cta-band .inner { padding: 50px 36px; }
         }
 
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .btn {
-                padding: 14px 30px;
-                font-size: 0.9rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .section-padding {
-                padding: 70px 0;
-            }
-            
-            .notaires-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
+        @media (max-width: 640px) {
+            .section { padding: 80px 0; }
+            .hero-stats .container { grid-template-columns: 1fr 1fr; gap: 30px 20px; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .process-grid { grid-template-columns: 1fr; }
+            .topbar .topbar-group:last-child { display: none; }
+            .topbar .container { justify-content: center; }
+            .brand-name { font-size: 1.05rem; }
+            .footer-main { grid-template-columns: 1fr; gap: 46px; padding: 60px 0 40px; }
+            .footer-bottom { justify-content: center; text-align: center; }
+            .contact-panel { padding: 40px 28px; }
+            .notaire-card { padding: 42px 30px; }
+            .hero-actions .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <a href="#accueil" class="logo-container">
-            <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Office Notarial Toure N'Diaye" class="logo-img">
-            <div class="logo-text">
-                OFFICE NOTARIAL<br>
-                <span>TOURÉ & N'DIAYE</span>
-            </div>
-        </a>
-        
-        <ul class="nav-links">
-            <li><a href="#accueil" class="active">Accueil</a></li>
-            <li><a href="#expertise">Expertise</a></li>
-            <li><a href="#notaires">L'Étude</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        
-        <div class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </div>
-        
-        <!--<div class="mobile-menu">
-            <div class="close-menu">
-                <i class="fas fa-times"></i>
-            </div>
-             <ul>
-                <li><a href="#accueil" class="active">Accueil</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#notaires">L'Étude</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul> 
-        </div> -->
-    </nav>
 
-    <!-- Hero Section -->
+    <!-- Top bar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-group">
+                <span><i class="fas fa-phone"></i> <a href="tel:+22320296249">(223) 20 29 62 49</a></span>
+                <span><i class="fas fa-envelope"></i> <a href="mailto:infos@notairetoure.ml">infos@notairetoure.ml</a></span>
+            </div>
+            <div class="topbar-group hours-hide">
+                <span><i class="fas fa-clock"></i> Lun — Ven : 08h00 - 17h00</span>
+                <span><i class="fas fa-location-dot"></i> Hamdallaye ACI 2000, Bamako</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / navigation -->
+    <header class="site-header" id="siteHeader">
+        <div class="container">
+            <nav class="nav">
+                <a href="#accueil" class="brand">
+                    <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Logo Office Notarial Touré N'Diaye" class="brand-logo">
+                    <span class="brand-name">
+                        TOURÉ &amp; N'DIAYE
+                        <small>Office Notarial</small>
+                    </span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="#accueil" class="active">Accueil</a>
+                    <a href="#expertise">Expertises</a>
+                    <a href="#etude">L'Étude</a>
+                    <a href="#notaires">Les Notaires</a>
+                    <a href="#contact">Contact</a>
+                    <span class="nav-cta">
+                        <a href="#contact" class="btn btn-teal">Rendez-vous</a>
+                    </span>
+                </div>
+
+                <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile drawer -->
+    <div class="drawer" id="drawer">
+        <button class="drawer-close" id="drawerClose" aria-label="Fermer le menu"><i class="fas fa-times"></i></button>
+        <a href="#accueil">Accueil</a>
+        <a href="#expertise">Expertises</a>
+        <a href="#etude">L'Étude</a>
+        <a href="#notaires">Les Notaires</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
     <section class="hero" id="accueil">
-        <div class="hero-content animate__animated animate__fadeInUp">
-            <h1>L'Excellence au service<br>de votre Sécurité Juridique</h1>
-            <p>Accompagnement, conseil et rédaction d'actes authentiques au Mali depuis plus de 35 ans. Une expertise notariale entre tradition et modernité.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn btn-primary">Prendre Rendez-vous</a>
-                <a href="#expertise" class="btn btn-outline">Nos Domaines</a>
+        <div class="hero-watermark">
+            <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="" aria-hidden="true">
+        </div>
+        <div class="container hero-inner">
+            <span class="eyebrow reveal visible">Notaires à Bamako — République du Mali</span>
+            <h1 class="reveal visible d1">L'excellence au service de<br>votre <em>sécurité juridique</em></h1>
+            <p class="hero-sub reveal visible d2">Depuis plus de 35 ans, l'Office Notarial TOURÉ &amp; N'DIAYE accompagne particuliers, entreprises et investisseurs dans la rédaction d'actes authentiques, entre tradition et modernité.</p>
+            <div class="hero-actions reveal visible d3">
+                <a href="#contact" class="btn btn-gold">Prendre rendez-vous <i class="fas fa-arrow-right"></i></a>
+                <a href="#expertise" class="btn btn-ghost">Nos domaines d'intervention</a>
             </div>
         </div>
-        
-        <div class="scroll-indicator">
-            <a href="#expertise">
-                <i class="fas fa-chevron-down"></i>
-                <span>Découvrir</span>
-            </a>
+        <div class="hero-stats">
+            <div class="container">
+                <div class="stat reveal visible"><div class="stat-num">35<sup>+</sup></div><div class="stat-label">Années d'expérience</div></div>
+                <div class="stat reveal visible d1"><div class="stat-num">2</div><div class="stat-label">Notaires associés</div></div>
+                <div class="stat reveal visible d2"><div class="stat-num">3</div><div class="stat-label">Pôles d'expertise</div></div>
+                <div class="stat reveal visible d3"><div class="stat-num">100<sup>%</sup></div><div class="stat-label">Confidentialité</div></div>
+            </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise section-padding">
+    <!-- Expertise -->
+    <section id="expertise" class="section expertise">
         <div class="container">
-            <h2 class="section-title">Nos Domaines d'Intervention</h2>
-            <p class="section-subtitle">Notre cabinet met à votre disposition une expertise pluridisciplinaire pour sécuriser vos projets juridiques.</p>
-            
+            <div class="section-head center reveal">
+                <span class="eyebrow">Nos expertises</span>
+                <h2>Des domaines d'intervention maîtrisés</h2>
+                <p>Une expertise pluridisciplinaire pour sécuriser chacun de vos projets juridiques, personnels comme professionnels.</p>
+            </div>
+
             <div class="expertise-grid">
-                <div class="expertise-card animate__animated">
-                    <div class="expertise-icon">
-                        <i class="fas fa-city"></i>
-                    </div>
+                <article class="exp-card reveal">
+                    <div class="exp-icon"><i class="fas fa-city"></i></div>
                     <h3>Droit Immobilier</h3>
-                    <p>Sécurisation foncière, compromis et actes de vente, règlements de copropriété et promotion immobilière. Nous accompagnons tous vos projets immobiliers avec rigueur et expertise.</p>
-                </div>
-                
-                <div class="expertise-card animate__animated">
-                    <div class="expertise-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
+                    <p>Nous accompagnons tous vos projets immobiliers avec rigueur, de la négociation à la signature de l'acte authentique.</p>
+                    <ul>
+                        <li>Sécurisation foncière</li>
+                        <li>Compromis &amp; actes de vente</li>
+                        <li>Règlements de copropriété</li>
+                        <li>Promotion immobilière</li>
+                    </ul>
+                </article>
+
+                <article class="exp-card reveal d1">
+                    <div class="exp-icon"><i class="fas fa-briefcase"></i></div>
                     <h3>Droit des Affaires</h3>
-                    <p>Constitution de sociétés, cessions de fonds de commerce, baux commerciaux et secrétariat juridique. Notre expertise vous garantit une sécurité juridique optimale pour vos activités.</p>
-                </div>
-                
-                <div class="expertise-card animate__animated">
-                    <div class="expertise-icon">
-                        <i class="fas fa-users-rays"></i>
+                    <p>Une sécurité juridique optimale pour vos activités, de la création de votre société à ses opérations les plus stratégiques.</p>
+                    <ul>
+                        <li>Constitution de sociétés</li>
+                        <li>Cessions de fonds de commerce</li>
+                        <li>Baux commerciaux</li>
+                        <li>Secrétariat juridique</li>
+                    </ul>
+                </article>
+
+                <article class="exp-card reveal d2">
+                    <div class="exp-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Patrimoine &amp; Famille</h3>
+                    <p>Nous préservons et transmettons votre patrimoine dans les meilleures conditions juridiques et fiscales.</p>
+                    <ul>
+                        <li>Successions &amp; donations</li>
+                        <li>Contrats de mariage</li>
+                        <li>Testaments authentiques</li>
+                        <li>Optimisation patrimoniale</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- L'Étude -->
+    <section id="etude" class="section etude">
+        <div class="container">
+            <div class="etude-grid">
+                <div class="etude-visual reveal">
+                    <div class="frame">
+                        <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Emblème de l'Office Notarial Touré N'Diaye">
                     </div>
-                    <h3>Patrimoine & Famille</h3>
-                    <p>Successions, donations, contrats de mariage et stratégies d'optimisation patrimoniale. Nous préservons et transmettons votre patrimoine dans les meilleures conditions juridiques.</p>
+                    <div class="etude-badge">
+                        <div class="num">35+</div>
+                        <div class="lbl">ans au service<br>du droit malien</div>
+                    </div>
+                </div>
+
+                <div class="etude-text reveal d1">
+                    <span class="eyebrow">L'Étude</span>
+                    <h2>Une institution notariale de référence au Mali</h2>
+                    <p>Implanté au cœur de Bamako, à Hamdallaye ACI 2000, l'Office Notarial TOURÉ &amp; N'DIAYE conjugue l'autorité de l'acte authentique avec une pratique moderne du conseil juridique. Notre mission : garantir à chaque client une sécurité juridique absolue.</p>
+                    <div class="etude-values">
+                        <div class="value-item">
+                            <i class="fas fa-scale-balanced"></i>
+                            <div>
+                                <h3>Impartialité &amp; rigueur</h3>
+                                <p>Officiers publics, nous conférons l'authenticité à vos actes avec une neutralité totale.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-user-shield"></i>
+                            <div>
+                                <h3>Confidentialité absolue</h3>
+                                <p>Le secret professionnel est le socle de notre relation de confiance avec chaque client.</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <h3>Conseil sur mesure</h3>
+                                <p>Chaque situation est unique : nous construisons des solutions juridiques adaptées à vos objectifs.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Notaires Section -->
-    <section id="notaires" class="section-padding">
+    <!-- Notaires -->
+    <section id="notaires" class="section notaires">
         <div class="container">
-            <h2 class="section-title">Les Notaires Associés</h2>
-            <p class="section-subtitle">Une équipe d'experts reconnus pour leur expertise et leur engagement au service de vos projets.</p>
-            
+            <div class="section-head center reveal">
+                <span class="eyebrow">Les associés</span>
+                <h2>Deux notaires, une exigence commune</h2>
+                <p>Une équipe reconnue pour son expertise, son parcours et son engagement au service de vos projets.</p>
+            </div>
+
             <div class="notaires-grid">
-                <div class="notaire-card animate__animated">
-                    <span class="notaire-tag">Ancien Ministre - Docteur en Droit</span>
+                <article class="notaire-card reveal">
+                    <span class="monogram">T</span>
+                    <span class="notaire-tag">Ancien Ministre — Docteur en Droit</span>
                     <h3>Me Ahmadou TOURÉ</h3>
-                    <p>Fort d'une carrière exceptionnelle incluant des fonctions ministérielles (Mines, Commerce, Industrie) et de Directeur de cabinet du Premier Ministre, Maître TOURÉ offre une vision stratégique et une rigueur académique inégalée à l'Office. Son expertise et son réseau garantissent un accompagnement de haute qualité pour les dossiers les plus complexes.</p>
-                </div>
-                
-                <div class="notaire-card animate__animated">
-                    <span class="notaire-tag">Notaire Associé</span>
+                    <div class="role">Notaire associé</div>
+                    <p class="bio">Fort d'une carrière exceptionnelle incluant des fonctions ministérielles (Mines, Commerce, Industrie) et de Directeur de cabinet du Premier Ministre, Maître TOURÉ apporte à l'Office une vision stratégique et une rigueur académique inégalées. Son expertise garantit un accompagnement de haute qualité pour les dossiers les plus complexes.</p>
+                </article>
+
+                <article class="notaire-card reveal d1">
+                    <span class="monogram">N</span>
+                    <span class="notaire-tag">Droit Notarial — Université de Pau</span>
                     <h3>Me Thierno Alou N'DIAYE</h3>
-                    <p>Diplômé de l'Université de Pau (France) en Droit Notarial et Droit des Affaires. Maître N'DIAYE assure la modernisation des services de l'office et une expertise technique pointue pour les investisseurs et les particuliers. Sa parfaite maîtrise des évolutions législatives garantit des solutions juridiques innovantes et adaptées.</p>
+                    <div class="role">Notaire associé</div>
+                    <p class="bio">Diplômé de l'Université de Pau (France) en Droit Notarial et Droit des Affaires, Maître N'DIAYE pilote la modernisation des services de l'Office et apporte une expertise technique pointue aux investisseurs comme aux particuliers. Sa maîtrise des évolutions législatives garantit des solutions juridiques innovantes.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section process">
+        <div class="container">
+            <div class="section-head center reveal">
+                <span class="eyebrow">Votre parcours</span>
+                <h2>Un accompagnement clair, étape par étape</h2>
+                <p>De la première consultation à la remise de vos actes, chaque étape est menée avec transparence.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="step reveal">
+                    <h3>Prise de contact</h3>
+                    <p>Vous exposez votre projet par téléphone, e-mail ou directement à l'Étude. Nous fixons un rendez-vous rapide.</p>
+                </div>
+                <div class="step reveal d1">
+                    <h3>Consultation &amp; conseil</h3>
+                    <p>Analyse approfondie de votre situation, présentation des options juridiques et de leurs implications.</p>
+                </div>
+                <div class="step reveal d2">
+                    <h3>Rédaction des actes</h3>
+                    <p>Préparation rigoureuse de vos actes authentiques et accomplissement de l'ensemble des formalités.</p>
+                </div>
+                <div class="step reveal d3">
+                    <h3>Signature &amp; suivi</h3>
+                    <p>Signature en l'Étude, enregistrement, conservation des minutes et suivi durable de votre dossier.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section-padding">
+    <!-- Contact -->
+    <section id="contact" class="section contact">
         <div class="container">
-            <h2 class="section-title">Nous Contacter</h2>
-            <p class="section-subtitle">Notre équipe est à votre disposition pour répondre à vos questions et vous accompagner dans vos démarches.</p>
-            
-            <div class="contact-container">
-                <div class="contact-info animate__animated">
-                    <h3>Informations de contact</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
+            <div class="cta-band">
+                <div class="inner reveal">
+                    <div>
+                        <h2>Un projet, une question juridique ?</h2>
+                        <p>Notre équipe vous reçoit à l'Étude, sur rendez-vous, du lundi au vendredi.</p>
+                    </div>
+                    <a href="tel:+22320296249" class="btn"><i class="fas fa-phone"></i> (223) 20 29 62 49</a>
+                </div>
+            </div>
+
+            <div class="section-head center reveal">
+                <span class="eyebrow">Contact</span>
+                <h2>Nous rencontrer à Bamako</h2>
+                <p>L'Étude vous accueille à Hamdallaye ACI 2000. Notre équipe est à votre disposition pour toute démarche.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-panel reveal">
+                    <h3>Coordonnées de l'Étude</h3>
+
+                    <div class="c-item">
+                        <i class="fas fa-location-dot"></i>
+                        <div>
                             <h4>Adresse</h4>
-                            <p>Hamdallaye ACI 2000, BP: 1868 Bamako, Mali</p>
+                            <p>Hamdallaye ACI 2000, BP : 1868<br>Bamako — République du Mali</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
+
+                    <div class="c-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
                             <h4>Téléphone</h4>
-                            <p>(223) 20 29 62 49</p>
+                            <p><a href="tel:+22320296249">(223) 20 29 62 49</a></p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-print"></i>
-                        </div>
-                        <div class="contact-details">
+
+                    <div class="c-item">
+                        <i class="fas fa-print"></i>
+                        <div>
                             <h4>Fax</h4>
                             <p>(223) 20 29 01 48</p>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <p>infos@notairetoure.ml</p>
+
+                    <div class="c-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p><a href="mailto:infos@notairetoure.ml">infos@notairetoure.ml</a></p>
                         </div>
                     </div>
-                    
-                    <div class="hours">
-                        <p>HORAIRES D'OUVERTURE</p>
-                        <p><strong>Lundi — Vendredi</strong> : 08:00 - 17:00</p>
-                        <p><strong>Samedi</strong> : Sur rendez-vous uniquement</p>
+
+                    <div class="hours-box">
+                        <h4>Horaires d'ouverture</h4>
+                        <div class="row"><span>Lundi — Vendredi</span><span>08h00 — 17h00</span></div>
+                        <div class="row"><span>Samedi</span><span>Sur rendez-vous</span></div>
+                        <div class="row"><span>Dimanche</span><span>Fermé</span></div>
                     </div>
                 </div>
-                
-                <div class="contact-map animate__animated">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.372750431251!2d-8.0246068!3d12.636736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM4JzEyLjMiTiA4wrAwMScyOC42Ilc!5e0!3m2!1sfr!2sml!4v1700000000000!5m2!1sfr!2sml" 
-                        allowfullscreen="" 
+
+                <div class="contact-map reveal d1">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.372750431251!2d-8.0246068!3d12.636736!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM4JzEyLjMiTiA4wrAwMScyOC42Ilc!5e0!3m2!1sfr!2sml!4v1700000000000!5m2!1sfr!2sml"
+                        allowfullscreen=""
                         loading="lazy"
+                        title="Localisation de l'Office Notarial Touré & N'Diaye"
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
@@ -967,155 +1299,126 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Logo" class="footer-logo">
-                    <p>L'Office Notarial TOURÉ & N'DIAYE est un cabinet d'excellence au Mali, offrant des services juridiques de qualité depuis plus de 35 ans. Notre mission est de garantir la sécurité juridique de nos clients grâce à notre expertise et notre engagement.</p>
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="brand-row">
+                        <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Logo Office Notarial Touré N'Diaye">
+                        <span class="brand-name">
+                            TOURÉ &amp; N'DIAYE
+                            <small>Office Notarial</small>
+                        </span>
+                    </div>
+                    <p>Cabinet notarial d'excellence au Mali depuis plus de 35 ans, l'Office garantit la sécurité juridique de ses clients grâce à son expertise, sa rigueur et son engagement.</p>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Liens rapides</h4>
-                    <ul>
+
+                <div>
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav">
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#expertise">Nos Expertises</a></li>
+                        <li><a href="#expertise">Nos expertises</a></li>
+                        <li><a href="#etude">L'Étude</a></li>
                         <li><a href="#notaires">Les Notaires</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-contact">
                     <h4>Coordonnées</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Hamdallaye ACI 2000, BP: 1868 Bamako</p>
-                    <p><i class="fas fa-phone-alt"></i> (223) 20 29 62 49</p>
+                    <p><i class="fas fa-location-dot"></i> Hamdallaye ACI 2000, BP : 1868, Bamako</p>
+                    <p><i class="fas fa-phone"></i> (223) 20 29 62 49</p>
                     <p><i class="fas fa-envelope"></i> infos@notairetoure.ml</p>
-                    <p><i class="fas fa-clock"></i> Lun-Ven: 08:00 - 17:00</p>
+                    <p><i class="fas fa-clock"></i> Lun — Ven : 08h00 - 17h00</p>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <p>© 2026 Office Notarial TOURÉ & N'DIAYE. Tous droits réservés.</p>
-                <p>Hamdallaye ACI 2000 - Bamako - République du Mali</p>
+                <span>© 2026 Office Notarial TOURÉ &amp; N'DIAYE — Tous droits réservés.</span>
+                <span>Hamdallaye ACI 2000 — Bamako — République du Mali</span>
             </div>
         </div>
     </footer>
 
+    <button class="to-top" id="toTop" aria-label="Revenir en haut"><i class="fas fa-chevron-up"></i></button>
+
     <script>
-        // Navigation scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            const logo = document.querySelector('.logo-img');
-            
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-            
-            // Update active nav link based on scroll position
-            updateActiveNavLink();
-        });
-        
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const closeMenuBtn = document.querySelector('.close-menu');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            });
-        });
-        
-        // Update active nav link on scroll
-        function updateActiveNavLink() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollPosition = window.scrollY + 100;
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    // Update desktop nav
-                    document.querySelectorAll('.nav-links a').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                    
-                    // Update mobile nav
-                    document.querySelectorAll('.mobile-menu a').forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === `#${sectionId}`) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
+        // ----- Header shadow + back-to-top on scroll -----
+        const header = document.getElementById('siteHeader');
+        const toTop = document.getElementById('toTop');
+
+        function onScroll() {
+            const y = window.scrollY;
+            header.classList.toggle('scrolled', y > 30);
+            toTop.classList.toggle('show', y > 600);
+            updateActiveLink();
         }
-        
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.animate__animated');
-            
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-                
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // ----- Mobile drawer -----
+        const burger = document.getElementById('burger');
+        const drawer = document.getElementById('drawer');
+        const drawerClose = document.getElementById('drawerClose');
+
+        function setDrawer(open) {
+            drawer.classList.toggle('open', open);
+            burger.classList.toggle('open', open);
+            burger.setAttribute('aria-expanded', open);
+            document.body.style.overflow = open ? 'hidden' : '';
         }
-        
-        // Set initial state for animated elements
-        document.querySelectorAll('.animate__animated').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-        
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        burger.addEventListener('click', () => setDrawer(!drawer.classList.contains('open')));
+        drawerClose.addEventListener('click', () => setDrawer(false));
+        drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') setDrawer(false); });
+
+        // ----- Active nav link -----
+        const sections = document.querySelectorAll('section[id]');
+        const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+        function updateActiveLink() {
+            const pos = window.scrollY + 140;
+            let current = 'accueil';
+            sections.forEach(s => { if (pos >= s.offsetTop) current = s.id; });
+            navAnchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+        }
+
+        // ----- Reveal on scroll -----
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
                 }
             });
-        });
-        
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            updateActiveNavLink();
-            animateOnScroll();
-        });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // ----- Animated counters in hero -----
+        const statNums = document.querySelectorAll('.stat-num');
+        const statObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                statObserver.unobserve(entry.target);
+                const el = entry.target;
+                const sup = el.querySelector('sup');
+                const suffix = sup ? sup.outerHTML : '';
+                const target = parseInt(el.textContent, 10);
+                if (isNaN(target)) return;
+                const duration = 1400;
+                const start = performance.now();
+                function tick(now) {
+                    const p = Math.min((now - start) / duration, 1);
+                    const eased = 1 - Math.pow(1 - p, 3);
+                    el.innerHTML = Math.round(target * eased) + suffix;
+                    if (p < 1) requestAnimationFrame(tick);
+                }
+                requestAnimationFrame(tick);
+            });
+        }, { threshold: 0.6 });
+        statNums.forEach(el => statObserver.observe(el));
+
+        onScroll();
     </script>
 </body>
 </html>

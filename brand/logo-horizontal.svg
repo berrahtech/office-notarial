@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" width="620" height="140" role="img" aria-label="Office Notarial Touré &amp; N'Diaye">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&amp;family=Inter:wght@500;600&amp;display=swap');
+    .serif { font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif; font-weight: 600; }
+    .sans { font-family: Inter, 'Segoe UI', Arial, sans-serif; font-weight: 600; }
+  </style>
+  <defs>
+    <symbol id="mono" viewBox="0 0 200 200">
+      <path fill-rule="evenodd" d="M18 100a82 82 0 1 0 164 0a82 82 0 1 0-164 0ZM36 100a64 76 0 1 0 128 0a64 76 0 1 0-128 0Z"/>
+      <path d="M60 46h80v4H60z M60 46h4v16l-4-4z M136 46h4v12l-4 4z M93 48h14v103H93z M82 150h36v2.5H82z M93 143q0 7-8 7h8z M107 143q0 7 8 7h-8z"/>
+      <path d="M49 90h13v1.5H49z M54 90h3v40h-3z M49 128.5h11v1.5H49z M54 90h8l22 40.5h-7z M81 90h3v40.5h-3z M77 90h11v1.5H77z"/>
+      <path d="M113 90h13v1.5h-13z M118 90h3v40h-3z M113 128.5h11v1.5h-11z M118 90h8l22 40.5h-7z M145 90h3v40.5h-3z M141 90h11v1.5h-11z"/>
+    </symbol>
+  </defs>
+  <use href="#mono" x="0" y="5" width="130" height="130" fill="#075e59"/>
+  <rect x="148" y="34" width="1" height="72" fill="#c9a24b"/>
+  <text x="170" y="76" class="serif" font-size="40" letter-spacing="3" fill="#032726">TOURÉ &amp; N'DIAYE</text>
+  <text x="172" y="104" class="sans" font-size="12" letter-spacing="5.5" fill="#c9a24b">OFFICE NOTARIAL · BAMAKO</text>
+</svg>

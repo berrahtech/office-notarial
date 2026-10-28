@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identité visuelle — Office Notarial Touré &amp; N'Diaye</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-950: #032726;
+    --teal-800: #075e59;
+    --teal-600: #0d8a82;
+    --gold: #c9a24b;
+    --gold-light: #e3c98a;
+    --ivory: #f6f1e6;
+    --ink: #1c2b2a;
+    --muted: #5c6f6d;
+    --line: #e3ecea;
+    --paper: #fbfaf7;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Inter', 'Segoe UI', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--sans); color: var(--ink); background: var(--paper); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  .wrap { width: min(1180px, 92%); margin: 0 auto; }
+  .serif { font-family: var(--serif); font-weight: 600; }
+  .sans-caps { font-family: var(--sans); font-weight: 600; }
+
+  /* Cover */
+  .cover {
+    background:
+      radial-gradient(ellipse 70% 60% at 80% 15%, rgba(20,168,158,.20), transparent 60%),
+      radial-gradient(ellipse 50% 50% at 10% 95%, rgba(201,162,75,.12), transparent 60%),
+      linear-gradient(160deg, var(--teal-950), #05403d);
+    color: var(--ivory);
+    padding: 90px 0 110px;
+    text-align: center;
+  }
+  .cover .kicker { font-size: .72rem; letter-spacing: .32em; text-transform: uppercase; color: var(--gold-light); }
+  .cover svg.lockup { width: min(420px, 86%); margin: 46px auto 36px; display: block; color: var(--ivory); }
+  .cover p { color: rgba(246,241,230,.65); max-width: 620px; margin: 0 auto; font-weight: 300; }
+
+  section { padding: 90px 0; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: .72rem; font-weight: 600; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); }
+  .eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 4vw, 2.8rem); color: var(--teal-950); line-height: 1.15; margin: 14px 0 18px; }
+  .lead { color: var(--muted); font-weight: 300; max-width: 700px; margin-bottom: 50px; }
+
+  /* Concept */
+  .concept-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+  .anatomy { background: #fff; border: 1px solid var(--line); padding: 30px; position: relative; }
+  .anatomy svg { width: 100%; display: block; }
+  .pillars { display: grid; gap: 22px; }
+  .pillar { display: grid; grid-template-columns: 44px 1fr; gap: 18px; align-items: start; }
+  .pillar .n { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--gold); line-height: 1; }
+  .pillar h3 { font-size: 1rem; font-weight: 600; color: var(--teal-800); margin-bottom: 3px; }
+  .pillar p { font-size: .92rem; color: var(--muted); font-weight: 300; }
+
+  /* Variants */
+  .variants { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .v-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .tile { border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .tile .stage { flex: 1; min-height: 280px; display: grid; place-items: center; padding: 40px; }
+  .tile .cap { padding: 14px 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; font-size: .8rem; background: #fff; }
+  .tile .cap b { font-weight: 600; color: var(--teal-950); }
+  .tile .cap span { color: var(--muted); }
+  .stage.light { background: var(--paper); color: var(--teal-800); }
+  .stage.dark { background: var(--teal-950); color: var(--ivory); }
+  .stage.gold { background: linear-gradient(120deg, var(--gold), #b8903a); color: var(--teal-950); }
+  .stage.teal { background: var(--teal-800); color: var(--ivory); }
+  .stage svg { display: block; }
+  .w-principal { width: min(300px, 90%); }
+  .w-horizontal { width: min(440px, 96%); }
+  .w-mono { width: 150px; }
+  .w-seal { width: 230px; }
+  .tile.wide { grid-column: span 2; }
+  .mini-row { display: flex; gap: 30px; align-items: end; justify-content: center; flex-wrap: wrap; }
+  .mini-row figure { text-align: center; font-size: .72rem; color: var(--muted); }
+  .mini-row figure svg { display: block; margin: 0 auto 8px; }
+
+  /* Colors */
+  .swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+  .sw { border: 1px solid var(--line); background: #fff; }
+  .sw .chip { height: 130px; }
+  .sw .meta { padding: 14px 16px; font-size: .8rem; }
+  .sw .meta b { display: block; font-weight: 600; color: var(--teal-950); margin-bottom: 4px; }
+  .sw .meta code { font-family: Consolas, monospace; color: var(--muted); font-size: .78rem; }
+
+  /* Type */
+  .type-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .type-card { background: #fff; border: 1px solid var(--line); padding: 38px; }
+  .type-card .big { font-size: 4.2rem; line-height: 1; color: var(--teal-950); margin-bottom: 18px; }
+  .type-card .name { font-weight: 600; color: var(--teal-800); }
+  .type-card p { color: var(--muted); font-size: .9rem; font-weight: 300; margin-top: 8px; }
+  .type-card .glyphs { margin-top: 18px; font-size: 1.1rem; letter-spacing: .06em; color: var(--ink); }
+
+  /* Rules */
+  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .rule-card { background: #fff; border: 1px solid var(--line); padding: 34px; }
+  .rule-card h3 { font-family: var(--serif); font-size: 1.5rem; color: var(--teal-950); margin-bottom: 10px; }
+  .rule-card p { color: var(--muted); font-size: .9rem; font-weight: 300; }
+  .clear { margin-top: 24px; display: grid; place-items: center; padding: 20px; }
+  .clear .box { position: relative; padding: 28px; outline: 1px dashed var(--gold); background: repeating-linear-gradient(45deg, rgba(201,162,75,.07) 0 6px, transparent 6px 12px); }
+  .clear .box .inner { background: var(--paper); padding: 6px; }
+  .clear .box span { position: absolute; font-size: .65rem; color: var(--gold); font-weight: 600; }
+  .donts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+  .dont { text-align: center; font-size: .72rem; color: var(--muted); }
+  .dont .st { height: 92px; display: grid; place-items: center; border: 1px solid var(--line); margin-bottom: 8px; position: relative; overflow: hidden; }
+  .dont .st::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top right, transparent calc(50% - 1px), #c0392b calc(50% - 1px), #c0392b calc(50% + 1px), transparent calc(50% + 1px)); opacity: .7; }
+
+  /* Mockups */
+  .mockups { background: linear-gradient(180deg, #eef3f1, var(--paper)); }
+  .mock-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .cards { position: relative; height: 380px; }
+  .card { position: absolute; width: 340px; height: 200px; box-shadow: 0 30px 60px rgba(3,39,38,.22); }
+  .card.front { left: 0; top: 20px; transform: rotate(-6deg); background: radial-gradient(ellipse at 70% 20%, rgba(20,168,158,.25), transparent 60%), var(--teal-950); display: grid; place-items: center; color: var(--gold-light); }
+  .card.front svg { width: 180px; }
+  .card.back { right: 0; bottom: 10px; transform: rotate(4deg); background: var(--ivory); padding: 26px 28px; display: flex; flex-direction: column; justify-content: space-between; border-top: 4px solid var(--gold); }
+  .card.back .nm { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; color: var(--teal-950); line-height: 1.1; }
+  .card.back .rl { font-size: .62rem; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-top: 4px; }
+  .card.back .ct { font-size: .7rem; color: var(--ink); line-height: 1.7; }
+  .card.back .top { display: flex; justify-content: space-between; align-items: start; }
+  .card.back .top svg { width: 42px; color: var(--teal-800); }
+  .letter { background: #fff; box-shadow: 0 30px 60px rgba(3,39,38,.16); aspect-ratio: 1 / 1.414; width: min(380px, 100%); margin: 0 auto; padding: 34px 36px; display: flex; flex-direction: column; position: relative; }
+  .letter .head { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid var(--gold-light); color: var(--teal-800); }
+  .letter .head svg { width: 210px; }
+  .letter .lines { margin-top: 28px; display: grid; gap: 9px; }
+  .letter .lines i { display: block; height: 5px; background: #eef1f0; border-radius: 3px; }
+  .letter .foot { margin-top: auto; padding-top: 12px; border-top: 1px solid var(--line); font-size: .5rem; color: var(--muted); letter-spacing: .08em; text-align: center; }
+  .letter .stamp { position: absolute; right: 34px; bottom: 60px; width: 92px; opacity: .9; transform: rotate(-12deg); }
+
+  footer { background: var(--teal-950); color: rgba(246,241,230,.5); text-align: center; padding: 34px 0; font-size: .8rem; }
+
+  @media (max-width: 900px) {
+    .concept-grid, .type-grid, .rules-grid, .mock-grid { grid-template-columns: 1fr; }
+    .v-grid { grid-template-columns: 1fr; }
+    .tile.wide { grid-column: auto; }
+    .swatches { grid-template-columns: repeat(2, 1fr); }
+    .cards { height: 420px; max-width: 420px; margin: 0 auto; width: 100%; }
+    .card { width: 290px; height: 172px; }
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mono" viewBox="0 0 200 200">
+      <path fill-rule="evenodd" d="M18 100a82 82 0 1 0 164 0a82 82 0 1 0-164 0ZM36 100a64 76 0 1 0 128 0a64 76 0 1 0-128 0Z"/>
+      <path d="M60 46h80v4H60z M60 46h4v16l-4-4z M136 46h4v12l-4 4z M93 48h14v103H93z M82 150h36v2.5H82z M93 143q0 7-8 7h8z M107 143q0 7 8 7h-8z"/>
+      <path d="M49 90h13v1.5H49z M54 90h3v40h-3z M49 128.5h11v1.5H49z M54 90h8l22 40.5h-7z M81 90h3v40.5h-3z M77 90h11v1.5H77z"/>
+      <path d="M113 90h13v1.5h-13z M118 90h3v40h-3z M113 128.5h11v1.5h-11z M118 90h8l22 40.5h-7z M145 90h3v40.5h-3z M141 90h11v1.5h-11z"/>
+    </symbol>
+
+    <!-- Logo principal (vertical) : currentColor = couleur dominante -->
+    <symbol id="principal" viewBox="0 0 400 300">
+      <use href="#mono" x="125" y="0" width="150" height="150" fill="currentColor"/>
+      <text x="200" y="208" text-anchor="middle" class="serif" font-size="36" letter-spacing="3" fill="currentColor">TOURÉ &amp; N'DIAYE</text>
+      <rect x="110" y="231" width="74" height="1" fill="#c9a24b"/>
+      <rect x="216" y="231" width="74" height="1" fill="#c9a24b"/>
+      <path d="M200 225l6 6.5-6 6.5-6-6.5z" fill="#c9a24b"/>
+      <text x="200" y="268" text-anchor="middle" class="sans-caps" font-size="13" letter-spacing="6.5" fill="currentColor">OFFICE NOTARIAL</text>
+      <text x="200" y="292" text-anchor="middle" class="sans-caps" font-size="9.5" letter-spacing="4.5" fill="#c9a24b">BAMAKO · MALI</text>
+    </symbol>
+
+    <!-- Logo horizontal -->
+    <symbol id="horizontal" viewBox="0 0 620 140">
+      <use href="#mono" x="0" y="5" width="130" height="130" fill="currentColor"/>
+      <rect x="148" y="34" width="1" height="72" fill="#c9a24b"/>
+      <text x="170" y="76" class="serif" font-size="40" letter-spacing="3" fill="currentColor">TOURÉ &amp; N'DIAYE</text>
+      <text x="172" y="104" class="sans-caps" font-size="12" letter-spacing="5.5" fill="#c9a24b">OFFICE NOTARIAL · BAMAKO</text>
+    </symbol>
+
+    <symbol id="app-icon" viewBox="0 0 200 200">
+      <rect width="200" height="200" rx="44" fill="#032726"/>
+      <use href="#mono" x="-8" y="-8" width="216" height="216" fill="#e3c98a"/>
+    </symbol>
+
+    <!-- Sceau -->
+    <path id="arcTop" d="M34 160A126 126 0 0 1 286 160"/>
+    <path id="arcBottom" d="M25 160A135 135 0 0 0 295 160"/>
+    <symbol id="sceau" viewBox="0 0 320 320">
+      <circle cx="160" cy="160" r="156" fill="#032726"/>
+      <g fill="none" stroke="#c9a24b">
+        <circle cx="160" cy="160" r="149" stroke-width="2"/>
+        <circle cx="160" cy="160" r="144" stroke-width="0.7"/>
+        <circle cx="160" cy="160" r="110" stroke-width="0.7"/>
+        <circle cx="160" cy="160" r="105" stroke-width="2"/>
+      </g>
+      <text class="sans-caps" font-size="12.5" letter-spacing="3" fill="#e3c98a"><textPath href="#arcTop" startOffset="50%" text-anchor="middle">OFFICE NOTARIAL · TOURÉ &amp; N'DIAYE</textPath></text>
+      <text class="sans-caps" font-size="13" letter-spacing="7" fill="#e3c98a"><textPath href="#arcBottom" startOffset="50%" text-anchor="middle">BAMAKO · MALI</textPath></text>
+      <path d="M30 160l5-5 5 5-5 5zM280 160l5-5 5 5-5 5z" fill="#c9a24b"/>
+      <use href="#mono" x="68" y="68" width="184" height="184" fill="#f6f1e6"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- COVER -->
+<header class="cover">
+  <div class="wrap">
+    <div class="kicker">Proposition d'identité visuelle — 2026</div>
+    <svg class="lockup" viewBox="0 0 400 300" role="img" aria-label="Logo principal"><use href="#principal"/></svg>
+    <p>Un monogramme dessiné sur mesure dans la tradition des caractères Didone : le contraste entre pleins et déliés évoque la plume, la rigueur et l'autorité de l'acte authentique.</p>
+  </div>
+</header>
+
+<!-- CONCEPT -->
+<section>
+  <div class="wrap concept-grid">
+    <div class="anatomy">
+      <svg viewBox="0 0 400 300" role="img" aria-label="Anatomie du monogramme">
+        <use href="#mono" x="100" y="20" width="200" height="200" fill="#075e59"/>
+        <g stroke="#c9a24b" stroke-width="1" fill="none" stroke-dasharray="3 3">
+          <path d="M100 120H40"/>
+          <path d="M200 66V30"/><path d="M200 30h110"/>
+          <path d="M142 130v70"/><path d="M142 200H60"/>
+          <path d="M258 130v70"/><path d="M258 200h80"/>
+        </g>
+        <g fill="#c9a24b"><circle cx="100" cy="120" r="3"/><circle cx="200" cy="66" r="3"/><circle cx="142" cy="130" r="3"/><circle cx="258" cy="130" r="3"/></g>
+        <g font-family="Inter, sans-serif" font-size="11" font-weight="600" fill="#032726" letter-spacing="1">
+          <text x="12" y="116">O</text><text x="12" y="132" font-weight="400" fill="#5c6f6d" font-size="9">Office · Sceau</text>
+          <text x="316" y="34">T</text><text x="316" y="48" font-weight="400" fill="#5c6f6d" font-size="9">Touré</text>
+          <text x="22" y="204">N</text><text x="22" y="218" font-weight="400" fill="#5c6f6d" font-size="9">Notarial</text>
+          <text x="344" y="204">N</text><text x="344" y="218" font-weight="400" fill="#5c6f6d" font-size="9">N'Diaye</text>
+        </g>
+        <text x="200" y="270" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#5c6f6d" letter-spacing="2">LECTURE : O · N · T · N</text>
+      </svg>
+    </div>
+    <div>
+      <span class="eyebrow">Le concept</span>
+      <h2>Un monogramme qui raconte l'Étude</h2>
+      <p class="lead" style="margin-bottom:30px">Le nouveau logo conserve l'ADN du logo actuel — le O enveloppant le T et les deux N — mais il est entièrement redessiné en vectoriel, net à toutes les tailles, de la favicon à l'enseigne.</p>
+      <div class="pillars">
+        <div class="pillar"><div class="n">O</div><div><h3>Le sceau de l'Office</h3><p>Le cercle évoque le sceau notarial qui authentifie chaque acte. Son épaisseur varie comme un trait de plume : plein sur les côtés, délié en haut et en bas.</p></div></div>
+        <div class="pillar"><div class="n">T</div><div><h3>Le pilier central</h3><p>Le T de Touré se dresse au centre comme une colonne : stabilité, droiture, institution. Sa barre fine rappelle le fléau d'une balance.</p></div></div>
+        <div class="pillar"><div class="n">N</div><div><h3>La symétrie des associés</h3><p>Les deux N — N'Diaye et Notarial — encadrent le T en parfait équilibre : l'impartialité, valeur cardinale du notaire.</p></div></div>
+        <div class="pillar"><div class="n">◆</div><div><h3>L'or de l'authenticité</h3><p>Le turquoise profond reprend la couleur historique de l'Étude ; l'or, réservé aux détails, signe la confiance et la valeur des actes.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VARIANTS -->
+<section class="variants">
+  <div class="wrap">
+    <span class="eyebrow">Déclinaisons</span>
+    <h2>Un système complet, pour chaque support</h2>
+    <p class="lead">Chaque version est livrée en SVG vectoriel dans le dossier <code>brand/</code> du projet.</p>
+    <div class="v-grid">
+      <div class="tile">
+        <div class="stage light"><svg class="w-principal" viewBox="0 0 400 300"><use href="#principal"/></svg></div>
+        <div class="cap"><b>Logo principal</b><span>Fond clair · logo-principal.svg</span></div>
+      </div>
+      <div class="tile">
+        <div class="stage dark"><svg class="w-principal" viewBox="0 0 400 300"><use href="#principal"/></svg></div>
+        <div class="cap"><b>Logo principal — inversé</b><span>Fond turquoise nuit</span></div>
+      </div>
+      <div class="tile wide">
+        <div class="stage light" style="min-height:220px"><svg class="w-horizontal" viewBox="0 0 620 140"><use href="#horizontal"/></svg></div>
+        <div class="cap"><b>Logo horizontal</b><span>En-têtes de site, signatures e-mail, factures · logo-horizontal.svg</span></div>
+      </div>
+      <div class="tile">
+        <div class="stage teal"><svg class="w-mono" viewBox="0 0 200 200"><use href="#mono" fill="currentColor"/></svg></div>
+        <div class="cap"><b>Monogramme seul</b><span>Réseaux sociaux, tampons · logo-monogramme.svg</span></div>
+      </div>
+      <div class="tile">
+        <div class="stage light"><svg class="w-seal" viewBox="0 0 320 320"><use href="#sceau"/></svg></div>
+        <div class="cap"><b>Sceau officiel</b><span>Actes, papeterie, plaque · logo-sceau.svg</span></div>
+      </div>
+      <div class="tile">
+        <div class="stage gold"><svg class="w-principal" viewBox="0 0 400 300" style="color:#032726"><use href="#principal"/></svg></div>
+        <div class="cap"><b>Version sur fond or</b><span>Invitations, packaging</span></div>
+      </div>
+      <div class="tile">
+        <div class="stage light">
+          <div class="mini-row">
+            <figure><svg width="96" height="96" viewBox="0 0 200 200"><use href="#app-icon"/></svg>96 px</figure>
+            <figure><svg width="48" height="48" viewBox="0 0 200 200"><use href="#app-icon"/></svg>48 px</figure>
+            <figure><svg width="32" height="32" viewBox="0 0 200 200"><use href="#app-icon"/></svg>32 px</figure>
+            <figure><svg width="16" height="16" viewBox="0 0 200 200"><use href="#app-icon"/></svg>16 px</figure>
+          </div>
+        </div>
+        <div class="cap"><b>Icône d'application / favicon</b><span>favicon.svg</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COLORS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Couleurs</span>
+    <h2>Une palette sobre et institutionnelle</h2>
+    <p class="lead">Le turquoise domine, l'or ponctue. Règle simple : jamais plus de 10 % d'or dans une composition.</p>
+    <div class="swatches">
+      <div class="sw"><div class="chip" style="background:#032726"></div><div class="meta"><b>Turquoise Nuit</b><code>#032726</code><br><code>RVB 3 · 39 · 38</code></div></div>
+      <div class="sw"><div class="chip" style="background:#075e59"></div><div class="meta"><b>Turquoise Étude</b><code>#075E59</code><br><code>RVB 7 · 94 · 89</code></div></div>
+      <div class="sw"><div class="chip" style="background:#0d8a82"></div><div class="meta"><b>Turquoise Clair</b><code>#0D8A82</code><br><code>RVB 13 · 138 · 130</code></div></div>
+      <div class="sw"><div class="chip" style="background:#c9a24b"></div><div class="meta"><b>Or Sceau</b><code>#C9A24B</code><br><code>RVB 201 · 162 · 75</code></div></div>
+      <div class="sw"><div class="chip" style="background:#f6f1e6"></div><div class="meta"><b>Ivoire Parchemin</b><code>#F6F1E6</code><br><code>RVB 246 · 241 · 230</code></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPOGRAPHY -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Typographie</span>
+    <h2>Deux voix complémentaires</h2>
+    <p class="lead">Une serif classique pour l'autorité, une sans-serif moderne pour la clarté. Toutes deux gratuites (Google Fonts).</p>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="big serif">Aa</div>
+        <div class="name">Cormorant Garamond — SemiBold</div>
+        <p>Titres, nom de l'Étude, citations. Héritière des Garamond de la Renaissance française.</p>
+        <div class="glyphs serif">ABCDÉ FGHIJ KLMN OPQRS TUVWXYZ &amp; 0123456789</div>
+      </div>
+      <div class="type-card">
+        <div class="big" style="font-family:var(--sans);font-weight:500">Aa</div>
+        <div class="name">Inter — Regular / SemiBold</div>
+        <p>Textes courants, mentions, coordonnées. En capitales espacées pour les sous-titres.</p>
+        <div class="glyphs" style="font-family:var(--sans)">ABCDÉ FGHIJ KLMN OPQRS TUVWXYZ &amp; 0123456789</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RULES -->
+<section style="padding-top:0">
+  <div class="wrap rules-grid">
+    <div class="rule-card">
+      <h3>Zone de protection &amp; taille minimale</h3>
+      <p>Laisser autour du logo un espace libre égal à la hauteur d'un « N » du monogramme. Taille minimale : 24 mm (imprimé) ou 120 px (écran) pour le logo principal ; 16 px pour le monogramme seul.</p>
+      <div class="clear">
+        <div class="box">
+          <div class="inner"><svg width="190" viewBox="0 0 400 300" style="color:#075e59;display:block"><use href="#principal"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="rule-card">
+      <h3>À éviter</h3>
+      <p>Le logo ne doit jamais être déformé, recoloré hors palette, posé sur une photo chargée ni accompagné d'ombres ou d'effets.</p>
+      <div class="donts">
+        <div class="dont"><div class="st"><svg width="110" height="60" viewBox="0 0 200 200" preserveAspectRatio="none" style="color:#075e59"><use href="#mono" fill="currentColor"/></svg></div>Déformer</div>
+        <div class="dont"><div class="st"><svg width="60" viewBox="0 0 200 200"><use href="#mono" fill="#d63384"/></svg></div>Recolorer</div>
+        <div class="dont"><div class="st" style="background:linear-gradient(45deg,#e67e22,#8e44ad,#16a085)"><svg width="60" viewBox="0 0 200 200"><use href="#mono" fill="#075e59"/></svg></div>Fond chargé</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MOCKUPS -->
+<section class="mockups">
+  <div class="wrap">
+    <span class="eyebrow">Mises en situation</span>
+    <h2>L'identité dans le quotidien de l'Étude</h2>
+    <p class="lead">Cartes de visite et papier à en-tête, avec le sceau apposé sur les documents officiels.</p>
+    <div class="mock-grid">
+      <div class="cards">
+        <div class="card front"><svg viewBox="0 0 400 300"><use href="#principal"/></svg></div>
+        <div class="card back">
+          <div class="top">
+            <div><div class="nm">Me Ahmadou TOURÉ</div><div class="rl">Notaire associé</div></div>
+            <svg viewBox="0 0 200 200"><use href="#mono" fill="currentColor"/></svg>
+          </div>
+          <div class="ct">Hamdallaye ACI 2000, BP 1868 — Bamako<br>(223) 20 29 62 49 · infos@notairetoure.ml</div>
+        </div>
+      </div>
+      <div class="letter">
+        <div class="head"><svg viewBox="0 0 620 140"><use href="#horizontal"/></svg></div>
+        <div class="lines">
+          <i style="width:40%"></i><i style="width:28%"></i><i style="width:0;height:10px;background:none"></i>
+          <i></i><i></i><i style="width:92%"></i><i></i><i style="width:76%"></i><i style="width:0;height:6px;background:none"></i>
+          <i></i><i style="width:88%"></i><i></i><i style="width:60%"></i>
+        </div>
+        <svg class="stamp" viewBox="0 0 320 320"><use href="#sceau"/></svg>
+        <div class="foot">OFFICE NOTARIAL TOURÉ &amp; N'DIAYE · HAMDALLAYE ACI 2000 · BP 1868 BAMAKO · (223) 20 29 62 49</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>Identité visuelle — Office Notarial Touré &amp; N'Diaye · Proposition 2026</footer>
+</body>
+</html>

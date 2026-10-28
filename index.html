@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Office Notarial TOURÉ &amp; N'DIAYE — Notaires à Bamako, Mali</title>
     <meta name="description" content="Office Notarial TOURÉ & N'DIAYE à Bamako — droit immobilier, droit des affaires, patrimoine et famille. Plus de 35 ans d'expertise notariale au Mali.">
-    <link rel="icon" type="image/png" href="Gemini_Generated_Image_w13mxcw13mxcw13m.png">
+    <link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -224,9 +224,6 @@
         .brand-logo {
             height: 62px;
             width: 62px;
-            object-fit: cover;
-            border-radius: 50%;
-            box-shadow: 0 4px 14px rgba(3, 39, 38, 0.18);
             transition: height 0.4s var(--ease), width 0.4s var(--ease);
         }
         header.scrolled .brand-logo { height: 50px; width: 50px; }
@@ -382,15 +379,11 @@
             transform: translateY(-50%);
             width: min(560px, 48vw);
             aspect-ratio: 1;
-            border-radius: 50%;
-            overflow: hidden;
-            opacity: 0.16;
-            filter: saturate(0.7);
-            box-shadow: 0 0 120px rgba(20, 168, 158, 0.35);
+            opacity: 0.07;
             animation: heroFloat 9s ease-in-out infinite;
             pointer-events: none;
         }
-        .hero-watermark img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-watermark img { width: 100%; height: 100%; display: block; }
         @keyframes heroFloat {
             0%, 100% { transform: translateY(-50%); }
             50% { transform: translateY(calc(-50% - 18px)); }
@@ -537,12 +530,17 @@
             border-radius: 50% 50% 4px 4px / 42% 42% 4px 4px;
             overflow: hidden;
             box-shadow: var(--shadow-lg);
+            aspect-ratio: 0.92;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(ellipse 70% 55% at 50% 45%, rgba(20, 168, 158, 0.28), transparent 70%),
+                linear-gradient(160deg, var(--teal-950), var(--teal-900));
         }
         .etude-visual .frame img {
-            width: 100%;
+            width: 72%;
             display: block;
-            aspect-ratio: 0.92;
-            object-fit: cover;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.35));
         }
         .etude-visual::before {
             content: '';
@@ -870,9 +868,6 @@
         .footer-brand img {
             height: 64px;
             width: 64px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 0 0 3px rgba(255,255,255,0.08);
         }
         .footer-brand .brand-name { color: #fff; }
         .footer-brand p { font-size: 0.92rem; font-weight: 300; max-width: 380px; }
@@ -956,9 +951,19 @@
             .footer-main { grid-template-columns: 1fr 1fr; }
         }
 
-        @media (max-width: 920px) {
+        .nav-links a, .brand-name, .btn { white-space: nowrap; }
+
+        @media (max-width: 1180px) {
+            .nav-links { gap: 28px; }
+            .nav-cta { display: none; }
+        }
+
+        @media (max-width: 1024px) {
             .nav-links { display: none; }
             .burger { display: flex; }
+        }
+
+        @media (max-width: 920px) {
             .topbar-group.hours-hide { display: none; }
             .etude-grid { grid-template-columns: 1fr; gap: 70px; }
             .etude-visual { max-width: 480px; margin: 0 auto; }
@@ -1007,7 +1012,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="#accueil" class="brand">
-                    <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Logo Office Notarial Touré N'Diaye" class="brand-logo">
+                    <img src="brand/logo-monogramme.svg" alt="Logo Office Notarial Touré N'Diaye" class="brand-logo">
                     <span class="brand-name">
                         TOURÉ &amp; N'DIAYE
                         <small>Office Notarial</small>
@@ -1045,7 +1050,7 @@
     <!-- Hero -->
     <section class="hero" id="accueil">
         <div class="hero-watermark">
-            <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="" aria-hidden="true">
+            <img src="brand/logo-monogramme-ivoire.svg" alt="" aria-hidden="true">
         </div>
         <div class="container hero-inner">
             <span class="eyebrow reveal visible">Notaires à Bamako — République du Mali</span>
@@ -1121,7 +1126,7 @@
             <div class="etude-grid">
                 <div class="etude-visual reveal">
                     <div class="frame">
-                        <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Emblème de l'Office Notarial Touré N'Diaye">
+                        <img src="brand/logo-sceau.svg" alt="Sceau de l'Office Notarial Touré N'Diaye">
                     </div>
                     <div class="etude-badge">
                         <div class="num">35+</div>
@@ -1302,7 +1307,7 @@
             <div class="footer-main">
                 <div class="footer-brand">
                     <div class="brand-row">
-                        <img src="Gemini_Generated_Image_w13mxcw13mxcw13m.png" alt="Logo Office Notarial Touré N'Diaye">
+                        <img src="brand/logo-monogramme-or.svg" alt="Logo Office Notarial Touré N'Diaye">
                         <span class="brand-name">
                             TOURÉ &amp; N'DIAYE
                             <small>Office Notarial</small>
